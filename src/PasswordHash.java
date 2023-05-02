@@ -10,4 +10,8 @@ public class PasswordHash {
         return passwordHash;
     }
 
+    public String toString() {
+        return passwordHash;
+    }
+
 }
