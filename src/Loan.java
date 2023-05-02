@@ -3,9 +3,9 @@ import java.util.Date;
 
 public class Loan {
     
-    Book book;
-    Date issueDate;
-    Date dueDate;
+    private Book book;
+    private Date issueDate;
+    private Date dueDate;
 
     public Loan(Book book) {
         this.book = book;
