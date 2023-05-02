@@ -14,4 +14,12 @@ public class RegUser extends User {
         this.loans = loans;
     }
 
+    public void addLoan(Loan loan) {
+        loans.add(loan);
+    }
+
+    public ArrayList<Loan> getLoans() {
+        return loans;
+    }
+
 }
