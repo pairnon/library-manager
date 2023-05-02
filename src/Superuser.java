@@ -58,4 +58,44 @@ public class Superuser extends User {
         return users;
     }
 
+    // Insertion sort ascending
+    public ArrayList<User> getUsersByIdAsc(Library library) {
+        ArrayList<User> users = library.getUsers();
+
+        for(int i = 1; i < users.size(); i++) {
+            User user = users.get(i);
+            int back = i - 1;
+
+            while(back >= 0 && user.getId() < users.get(back).getId()) {
+                users.set(back+1, users.get(back));
+                back--;
+            }
+
+            users.set(back + 1, user);
+
+        }
+
+        return users;
+    }
+
+    // Insertion sort descending
+    public ArrayList<User> getUsersByIdDesc(Library library) {
+        ArrayList<User> users = library.getUsers();
+
+        for(int i = 1; i < users.size(); i++) {
+            User user = users.get(i);
+            int back = i - 1;
+
+            while(back >= 0 && user.getId() > users.get(back).getId()) {
+                users.set(back+1, users.get(back));
+                back--;
+            }
+
+            users.set(back + 1, user);
+
+        }
+
+        return users;
+    }
+
 }
