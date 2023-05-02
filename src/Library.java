@@ -8,6 +8,15 @@ public class Library {
         this.books = books;
     }
 
+    public Library(Book[] books) {
+        this.books = new ArrayList<Book>();
+        for(Book book : books) {
+            if(!book.equals(null)) {
+                this.books.add(book);
+            }
+        }
+    }
+
     public ArrayList<Book> getBooks() {
         return books;
     }
