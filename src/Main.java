@@ -11,7 +11,7 @@ public class Main {
         
         while(!loggedIn) {
             System.out.println("Admin Login");
-            System.out.println("default is admin, root");
+            System.out.println("default login is admin, root");
 
 
             System.out.println("Username:");
