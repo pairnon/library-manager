@@ -21,4 +21,12 @@ public class Library {
         return books;
     }
 
+    public String toString() {
+        String out = "";
+        for(Book book : books) {
+            out += book + "\n";
+        }
+        return out;
+    }
+
 }
