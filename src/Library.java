@@ -11,7 +11,7 @@ public class Library {
     public Library(Book[] books) {
         this.books = new ArrayList<Book>();
         for(Book book : books) {
-            if(!book.equals(null)) {
+            if(book!=null) {
                 this.books.add(book);
             }
         }
