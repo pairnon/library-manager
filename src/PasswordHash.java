@@ -14,4 +14,8 @@ public class PasswordHash {
         return passwordHash;
     }
 
+    public boolean equals(PasswordHash other) {
+        return this.passwordHash.equals(other.getPasswordHash());
+    }
+
 }
