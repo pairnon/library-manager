@@ -36,7 +36,7 @@ public class Library {
 
     public String toString() {
         String out = "";
-        out += "Admin: " + admin.getName() + "\n";
+        out += "Library Admin: " + admin.getName() + "\n";
         for(Book book : books) {
             out += book + " | ";
         }
