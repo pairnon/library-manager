@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Superuser extends User {
 
     private PasswordHash password;
+    private boolean loggedIn = false;
 
     public Superuser(String name, int id, String password) {
         super(name, id);
@@ -18,8 +19,35 @@ public class Superuser extends User {
         return password;
     }
 
+    public boolean getLogInStatus() {
+        return loggedIn;
+    }
+
+    public boolean authenticate(String passwordAttempt) {
+        
+        PasswordHash hashedAttempt;
+        
+        try {
+            hashedAttempt = new PasswordHash(SHA256.getDigest(passwordAttempt));
+            if(this.password.equals(hashedAttempt)) {
+                loggedIn = true;
+                return true;
+            }
+
+            else return false;
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
     // Insertion sort ascending
     public ArrayList<User> getUsersByNameAsc(Library library) {
+
+        if(!loggedIn) return null;
+
         ArrayList<User> users = library.getUsers();
 
         for(int i = 1; i < users.size(); i++) {
@@ -40,6 +68,9 @@ public class Superuser extends User {
 
     // Insertion sort descending
     public ArrayList<User> getUsersByNameDesc(Library library) {
+
+        if(!loggedIn) return null;
+
         ArrayList<User> users = library.getUsers();
 
         for(int i = 1; i < users.size(); i++) {
@@ -60,6 +91,9 @@ public class Superuser extends User {
 
     // Insertion sort ascending
     public ArrayList<User> getUsersByIdAsc(Library library) {
+
+        if(!loggedIn) return null;
+
         ArrayList<User> users = library.getUsers();
 
         for(int i = 1; i < users.size(); i++) {
@@ -80,6 +114,9 @@ public class Superuser extends User {
 
     // Insertion sort descending
     public ArrayList<User> getUsersByIdDesc(Library library) {
+
+        if(!loggedIn) return null;
+
         ArrayList<User> users = library.getUsers();
 
         for(int i = 1; i < users.size(); i++) {
