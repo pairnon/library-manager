@@ -3,20 +3,27 @@ import java.util.ArrayList;
 public class Library {
 
     private ArrayList<Book> books;
+    private Superuser admin;
     private ArrayList<User> users;
 
-    public Library(ArrayList<Book> books) {
+    public Library(ArrayList<Book> books, Superuser admin) {
         this.books = books;
+        this.admin = admin;
         this.users = new ArrayList<User>();
     }
 
-    public Library(ArrayList<Book> books, ArrayList<User> users) {
+    public Library(ArrayList<Book> books, Superuser admin, ArrayList<User> users) {
         this.books = books;
+        this.admin = admin;
         this.users = users;
     }
 
     public ArrayList<Book> getBooks() {
         return books;
+    }
+
+    public String getAdminName() {
+        return admin.getName();
     }
 
     public ArrayList<User> getUsers() {
@@ -29,6 +36,7 @@ public class Library {
 
     public String toString() {
         String out = "";
+        out += "Admin: " + admin.getName() + "\n";
         for(Book book : books) {
             out += book + " | ";
         }
