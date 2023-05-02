@@ -7,6 +7,7 @@ public class Library {
 
     public Library(ArrayList<Book> books) {
         this.books = books;
+        this.users = new ArrayList<User>();
     }
 
     public Library(ArrayList<Book> books, ArrayList<User> users) {
@@ -21,6 +22,7 @@ public class Library {
                 this.books.add(book);
             }
         }
+        this.users = new ArrayList<User>();
     }
 
     public ArrayList<Book> getBooks() {
@@ -29,6 +31,10 @@ public class Library {
 
     public ArrayList<User> getUsers() {
         return users;
+    }
+
+    public void addUser(User user) {
+        users.add(user);
     }
 
     public String toString() {
