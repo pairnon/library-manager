@@ -38,7 +38,7 @@ public class Superuser extends User {
         return users;
     }
 
-    // Insertion sort ascending
+    // Insertion sort descending
     public ArrayList<User> getUsersByNameDesc(Library library) {
         ArrayList<User> users = library.getUsers();
 
