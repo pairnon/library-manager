@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        Superuser admin = new Superuser("admin", 0, "root");
         try (Scanner scanner = new Scanner(System.in)) {
-            Superuser admin = new Superuser("admin", 0, "root");
             
             boolean loggedIn = admin.getLogInStatus();
 
