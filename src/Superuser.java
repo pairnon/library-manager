@@ -15,10 +15,6 @@ public class Superuser extends User {
         }
     }
 
-    public PasswordHash getPassword() {
-        return password;
-    }
-
     public boolean getLogInStatus() {
         return loggedIn;
     }
