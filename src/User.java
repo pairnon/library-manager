@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public class User {
     
     private String name;
     private int id;
+    private ArrayList<Loan> loans;
 
     public User(String name, int id) {
         this.name = name;
@@ -14,6 +17,14 @@ public class User {
 
     public int getId() {
         return id;
+    }
+
+    public void addLoan(Loan loan) {
+        loans.add(loan);
+    }
+
+    public ArrayList<Loan> getLoans() {
+        return loans;
     }
 
 }
