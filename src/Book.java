@@ -16,4 +16,8 @@ public class Book {
 		return author;
 	}
 
+	public String toString() {
+		return title + " by " + author;
+	}
+
 }
