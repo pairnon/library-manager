@@ -40,95 +40,95 @@ public class Superuser extends User {
     }
 
     // Insertion sort ascending
-    public ArrayList<User> getUsersByNameAsc(Library library) {
+    public ArrayList<RegUser> getRegUsersByNameAsc(Library library) {
 
         if(!loggedIn) return null;
 
-        ArrayList<User> users = library.getUsers();
+        ArrayList<RegUser> regUsers = library.getRegUsers();
 
-        for(int i = 1; i < users.size(); i++) {
-            User user = users.get(i);
+        for(int i = 1; i < regUsers.size(); i++) {
+            RegUser regUser = regUsers.get(i);
             int back = i - 1;
 
-            while(back >= 0 && user.getName().compareTo(users.get(back).getName()) < 0) {
-                users.set(back+1, users.get(back));
+            while(back >= 0 && regUser.getName().compareTo(regUsers.get(back).getName()) < 0) {
+                regUsers.set(back+1, regUsers.get(back));
                 back--;
             }
 
-            users.set(back + 1, user);
+            regUsers.set(back + 1, regUser);
 
         }
 
-        return users;
+        return regUsers;
     }
 
     // Insertion sort descending
-    public ArrayList<User> getUsersByNameDesc(Library library) {
+    public ArrayList<RegUser> getRegUsersByNameDesc(Library library) {
 
         if(!loggedIn) return null;
 
-        ArrayList<User> users = library.getUsers();
+        ArrayList<RegUser> regusers = library.getRegUsers();
 
-        for(int i = 1; i < users.size(); i++) {
-            User user = users.get(i);
+        for(int i = 1; i < regusers.size(); i++) {
+            RegUser reguser = regusers.get(i);
             int back = i - 1;
 
-            while(back >= 0 && user.getName().compareTo(users.get(back).getName()) > 0) {
-                users.set(back+1, users.get(back));
+            while(back >= 0 && reguser.getName().compareTo(regusers.get(back).getName()) > 0) {
+                regusers.set(back+1, regusers.get(back));
                 back--;
             }
 
-            users.set(back + 1, user);
+            regusers.set(back + 1, reguser);
 
         }
 
-        return users;
+        return regusers;
     }
 
     // Insertion sort ascending
-    public ArrayList<User> getUsersByIdAsc(Library library) {
+    public ArrayList<RegUser> getRegUsersByIdAsc(Library library) {
 
         if(!loggedIn) return null;
 
-        ArrayList<User> users = library.getUsers();
+        ArrayList<RegUser> regusers = library.getRegUsers();
 
-        for(int i = 1; i < users.size(); i++) {
-            User user = users.get(i);
+        for(int i = 1; i < regusers.size(); i++) {
+            RegUser reg = regusers.get(i);
             int back = i - 1;
 
-            while(back >= 0 && user.getId() < users.get(back).getId()) {
-                users.set(back+1, users.get(back));
+            while(back >= 0 && reg.getId() < regusers.get(back).getId()) {
+                regusers.set(back+1, regusers.get(back));
                 back--;
             }
 
-            users.set(back + 1, user);
+            regusers.set(back + 1, reg);
 
         }
 
-        return users;
+        return regusers;
     }
 
     // Insertion sort descending
-    public ArrayList<User> getUsersByIdDesc(Library library) {
+    public ArrayList<RegUser> getRegUsersByIdDesc(Library library) {
 
         if(!loggedIn) return null;
 
-        ArrayList<User> users = library.getUsers();
+        ArrayList<RegUser> regusers = library.getRegUsers();
 
-        for(int i = 1; i < users.size(); i++) {
-            User user = users.get(i);
+        for(int i = 1; i < regusers.size(); i++) {
+            RegUser reguser = regusers.get(i);
             int back = i - 1;
 
-            while(back >= 0 && user.getId() > users.get(back).getId()) {
-                users.set(back+1, users.get(back));
+            while(back >= 0 && reguser.getId() > regusers.get(back).getId()) {
+                regusers.set(back+1, regusers.get(back));
                 back--;
             }
 
-            users.set(back + 1, user);
+            regusers.set(back + 1, reguser);
 
         }
 
-        return users;
+        return regusers;
     }
 
 }
