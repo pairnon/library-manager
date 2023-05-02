@@ -15,26 +15,6 @@ public class Library {
         this.users = users;
     }
 
-    public Library(Book[] books) {
-        this.books = new ArrayList<Book>();
-        for(Book book : books) {
-            if(book!=null) {
-                this.books.add(book);
-            }
-        }
-        this.users = new ArrayList<User>();
-    }
-
-    public Library(Book[] books, ArrayList<User> users) {
-        this.books = new ArrayList<Book>();
-        for(Book book : books) {
-            if(book!=null) {
-                this.books.add(book);
-            }
-        }
-        this.users = users;
-    }
-
     public ArrayList<Book> getBooks() {
         return books;
     }
