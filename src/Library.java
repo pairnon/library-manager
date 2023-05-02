@@ -6,6 +6,12 @@ public class Library {
     private Superuser admin;
     private ArrayList<User> users;
 
+    public Library(Superuser admin) {
+        this.books = new ArrayList<Book>();
+        this.admin = admin;
+        this.users = new ArrayList<User>();
+    }
+    
     public Library(ArrayList<Book> books, Superuser admin) {
         this.books = books;
         this.admin = admin;
