@@ -4,24 +4,24 @@ public class Library {
 
     private ArrayList<Book> books;
     private Superuser admin;
-    private ArrayList<User> users;
+    private ArrayList<RegUser> regUsers;
 
     public Library(Superuser admin) {
         this.books = new ArrayList<Book>();
         this.admin = admin;
-        this.users = new ArrayList<User>();
+        this.regUsers = new ArrayList<RegUser>();
     }
     
     public Library(ArrayList<Book> books, Superuser admin) {
         this.books = books;
         this.admin = admin;
-        this.users = new ArrayList<User>();
+        this.regUsers = new ArrayList<RegUser>();
     }
 
-    public Library(ArrayList<Book> books, Superuser admin, ArrayList<User> users) {
+    public Library(ArrayList<Book> books, Superuser admin, ArrayList<RegUser> regUsers) {
         this.books = books;
         this.admin = admin;
-        this.users = users;
+        this.regUsers = regUsers;
     }
 
     public ArrayList<Book> getBooks() {
@@ -32,12 +32,12 @@ public class Library {
         return admin.getName();
     }
 
-    public ArrayList<User> getUsers() {
-        return users;
+    public ArrayList<RegUser> getRegUsers() {
+        return regUsers;
     }
 
-    public void addUser(User user) {
-        users.add(user);
+    public void addRegUser(RegUser regUser) {
+        regUsers.add(regUser);
     }
 
     public String toString() {
@@ -47,8 +47,8 @@ public class Library {
             out += book + " | ";
         }
         out += "\n";
-        for(User user : users) {
-            out += user + " | ";
+        for(RegUser regUser : regUsers) {
+            out += regUser + " | ";
         }
         return out;
     }
