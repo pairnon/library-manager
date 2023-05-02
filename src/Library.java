@@ -40,6 +40,16 @@ public class Library {
         regUsers.add(regUser);
     }
 
+    public void addRegUser(String name, int id) {
+        RegUser regUser = new RegUser(name, id);
+        regUsers.add(regUser);
+    }
+
+    public void addRegUser(String name, int id, ArrayList<Loan> loans) {
+        RegUser regUser = new RegUser(name, id, loans);
+        regUsers.add(regUser);
+    }
+
     public String toString() {
         String out = "";
         out += "Library Admin: " + admin.getName() + "\n";
