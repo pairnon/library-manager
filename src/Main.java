@@ -5,9 +5,8 @@ public class Main {
 
     public static void main(String[] args) {
         Superuser admin = new Superuser("admin", 0, "root");
-        ArrayList<RegUser> regUsers = new ArrayList<RegUser>();
-        ArrayList<Book> books = new ArrayList<Book>();
-        Library lib = new Library(books, admin, regUsers);
+
+        Library lib = Instantiator.instantiateLibrary(admin);
 
         System.out.println("");
         try (Scanner scanner = new Scanner(System.in)) {
