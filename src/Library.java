@@ -50,6 +50,23 @@ public class Library {
         regUsers.add(regUser);
     }
 
+    public int findBookIndexByTitle(String title) {
+        for(int i = 0; i < books.size(); i++) {
+            if(books.get(i).getTitle().equals(title)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public Book findBookByTitle(String title) {
+        int index = findBookIndexByTitle(title);
+        if(index >= 0) {
+            return books.get(index);
+        }
+        return null;
+    }
+
     public String toString() {
         String out = "";
         out += "Library Admin: " + admin.getName() + "\n";
