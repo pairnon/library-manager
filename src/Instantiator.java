@@ -31,7 +31,7 @@ public class Instantiator {
         
         for(int i = 0; i < names.length; i++) {
             ArrayList<Loan> loans = new ArrayList<Loan>();
-            for(int j = 0; j < 10; j++) {
+            for(int j = 0; j < 3; j++) {
                 int index = (int)(Math.random() * 199);
                 Loan loan = new Loan(books.get(index));
                 loans.add(loan);
