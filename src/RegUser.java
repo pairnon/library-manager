@@ -102,4 +102,9 @@ public class RegUser extends User {
         return books;
     }
 
+    public String toString() {
+        String out = super.toString();
+        return out + " | Loans: " + loans + "\n\n";
+    }
+
 }
