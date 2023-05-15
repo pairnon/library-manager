@@ -104,7 +104,11 @@ public class RegUser extends User {
 
     public String toString() {
         String out = super.toString();
-        return out + " | Loans: " + loans + "\n\n";
+        String formattedLoans = "\n";
+        for(Loan loan : loans) {
+            formattedLoans += loan + "\n";
+        }
+        return out + " | Loans: " + formattedLoans + "\n\n";
     }
 
 }
