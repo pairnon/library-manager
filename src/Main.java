@@ -26,10 +26,10 @@ public class Main {
 
         System.out.println("login success");
 
-        adminMenu(admin);
+        adminMenu(admin, lib);
     }
 
-    public static void adminMenu(Superuser admin) {
+    public static void adminMenu(Superuser admin, Library lib) {
 
         if(!admin.getLogInStatus()) {
             return;
@@ -42,10 +42,10 @@ public class Main {
             String action = scanner.nextLine();
             System.out.println("");
             if(action.equals("1")) {
-                System.out.println(1);
+                System.out.println(lib.getRegUsers());
             }
             else if(action.equals("2")) {
-                System.out.println(2);
+                System.out.println(lib.getBooks());
             }
             else {
                 break;
