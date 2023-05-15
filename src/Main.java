@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -9,9 +8,9 @@ public class Main {
         Library lib = Instantiator.instantiateLibrary(admin);
 
         System.out.println("");
-        try (Scanner scanner = new Scanner(System.in)) {
-            
-            boolean loggedIn = admin.getLogInStatus();
+        Scanner scanner = new Scanner(System.in);
+
+        boolean loggedIn = admin.getLogInStatus();
 
             while(!loggedIn) {
                 System.out.println("Admin Login");
@@ -24,9 +23,35 @@ public class Main {
 
                 loggedIn = admin.authenticate(password);
             }
-        }
+
         System.out.println("login success");
 
+        adminMenu(admin);
+    }
+
+    public static void adminMenu(Superuser admin) {
+
+        if(!admin.getLogInStatus()) {
+            return;
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        while(true) {
+            System.out.println("Actions\n1 - list registered users\n2 - list books in system\nx - exit");
+            System.out.println("Action:");
+            String action = scanner.nextLine();
+            System.out.println("");
+            if(action.equals("1")) {
+                System.out.println(1);
+            }
+            else if(action.equals("2")) {
+                System.out.println(2);
+            }
+            else {
+                break;
+            }
+        }
+        scanner.close();
     }
 
 }
