@@ -22,6 +22,7 @@ public class RegUser extends User {
         return loans;
     }
 
+    // Insertion sort ascending
     public ArrayList<Book> getBooksByAuthorAsc(Library library) {
         ArrayList<Book> books = library.getBooks();
 
