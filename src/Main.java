@@ -37,7 +37,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         while(true) {
-            System.out.println("LIBRARY ADMINISTRATION\nActions\n1 - sort registered users\n2 - sort books\n9 - whoami\nx - exit");
+            System.out.println("LIBRARY ADMINISTRATION\nActions\n1 - sort registered users\n2 - sort books\n3 - search for registered user\n9 - whoami\nx - exit");
             System.out.println("Action:");
             String action = scanner.nextLine();
             System.out.println("");
@@ -87,8 +87,28 @@ public class Main {
                     }
                 }
             }
-            else if(action.equals("3")) {
-                // TODO
+            else if(action.equals("3")) { //TODO
+                while(true) {
+                    System.out.println("SEARCH FOR REGISTERED USER\nActions\n1 - search by name\n2 - search by id\nx - exit");
+                    System.out.println("Action:");
+                    action = scanner.nextLine();
+                    System.out.println("");
+                    if(action.equals("1")) {
+                        System.out.println();
+                    }
+                    else if(action.equals("2")) {
+                        System.out.println();
+                    }
+                    else if(action.equals("3")) {
+                        System.out.println();
+                    }
+                    else if(action.equals("4")) {
+                        System.out.println();
+                    }
+                    else {
+                        break;
+                    }
+                }
             }
             else if(action.equals("4")) {
                 // TODO
