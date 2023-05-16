@@ -97,14 +97,14 @@ public class Main {
                         System.out.println("Name:");
                         String name = scanner.nextLine();
                         System.out.println("");
-                        System.out.println(admin.searchRegUserByName(name, lib));
+                        System.out.println(admin.searchRegUserByName(name, lib) + "\n");
                         
                     }
                     else if(action.equals("2")) {
                         System.out.println("ID:");
                         String id = scanner.nextLine();
                         System.out.println("");
-                        System.out.println(admin.searchRegUserByName(id, lib));
+                        System.out.println(admin.searchRegUserById(id, lib) + "\n");
                     }
                     else {
                         break;
