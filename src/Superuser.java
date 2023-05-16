@@ -39,6 +39,33 @@ public class Superuser extends User {
         return false;
     }
 
+    public RegUser searchRegUserByName(String name, Library library) {
+        for(RegUser r : library.getRegUsers()) {
+            if(r.getName().equals(name)) {
+                return r;
+            }
+        }
+        return null;
+    }
+
+    public RegUser searchRegUserById(int id, Library library) {
+        for(RegUser r : library.getRegUsers()) {
+            if(r.getId() == id) {
+                return r;
+            }
+        }
+        return null;
+    }
+
+    public RegUser searchRegUserById(String id, Library library) {
+        for(RegUser r : library.getRegUsers()) {
+            if(Integer.toString(r.getId()).equals(id)) {
+                return r;
+            }
+        }
+        return null;
+    }
+
     // Insertion sort ascending
     public ArrayList<RegUser> getRegUsersByNameAsc(Library library) {
 
