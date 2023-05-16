@@ -21,7 +21,7 @@ public class Main {
                 break;
             }
             else if(action.equals("2")) {
-                adminLogin(admin, lib);
+                Menu.adminLogin(admin, lib);
                 break;
             }
             else {
@@ -32,125 +32,6 @@ public class Main {
         scanner.close();
     }
 
-    public static void adminLogin(Superuser admin, Library lib) {
-
-        Scanner scanner = new Scanner(System.in);
-
-        boolean adminLoggedIn = admin.getLogInStatus();
-
-            while(!adminLoggedIn) {
-                System.out.println("Admin Login");
-                System.out.println("default password is 'root'");
-
-                System.out.println("Password:");
-                String password = scanner.nextLine();
-
-                System.out.println("");
-
-                adminLoggedIn = admin.authenticate(password);
-            }
-
-        System.out.println("login success\n");
-
-        adminMenu(admin, lib);
-
-        scanner.close();
-    }
-
-    public static void adminMenu(Superuser admin, Library lib) {
-
-        if(!admin.getLogInStatus()) {
-            return;
-        }
-
-        Scanner scanner = new Scanner(System.in);
-        while(true) {
-            System.out.println("LIBRARY ADMINISTRATION\nActions\n1 - sort registered users\n2 - sort books\n3 - search for registered user\n9 - whoami\nx - exit");
-            System.out.println("Action:");
-            String action = scanner.nextLine();
-            System.out.println("");
-            if(action.equals("1")) {
-                while(true) {
-                    System.out.println("SORT REGISTERED USERS\nActions\n1 - sort by name asc.\n2 - sort by name desc.\n3 - sort by id asc.\n4 - sort by id desc.\nx - exit");
-                    System.out.println("Action:");
-                    action = scanner.nextLine();
-                    System.out.println("");
-                    if(action.equals("1")) {
-                        System.out.println(admin.getRegUsersByNameAsc(lib));
-                    }
-                    else if(action.equals("2")) {
-                        System.out.println(admin.getRegUsersByNameDesc(lib));
-                    }
-                    else if(action.equals("3")) {
-                        System.out.println(admin.getRegUsersByIdAsc(lib));
-                    }
-                    else if(action.equals("4")) {
-                        System.out.println(admin.getRegUsersByIdDesc(lib));
-                    }
-                    else {
-                        break;
-                    }
-                }
-            }
-            else if(action.equals("2")) {
-                while(true) {
-                    System.out.println("SORT BOOKS\nActions\n1 - sort by author asc.\n2 - sort by author desc.\n3 - sort by title asc.\n4 - sort by title desc.\nx - exit");
-                    System.out.println("Action:");
-                    action = scanner.nextLine();
-                    System.out.println("");
-                    if(action.equals("1")) {
-                        System.out.println(admin.getBooksByAuthorAsc(lib) + "\n");
-                    }
-                    else if(action.equals("2")) {
-                        System.out.println(admin.getBooksByAuthorDesc(lib) + "\n");
-                    }
-                    else if(action.equals("3")) {
-                        System.out.println(admin.getBooksByTitleAsc(lib) + "\n");
-                    }
-                    else if(action.equals("4")) {
-                        System.out.println(admin.getBooksByTitleDesc(lib) + "\n");
-                    }
-                    else {
-                        break;
-                    }
-                }
-            }
-            else if(action.equals("3")) {
-                while(true) {
-                    System.out.println("SEARCH FOR REGISTERED USER\nActions\n1 - search by name\n2 - search by id\nx - exit");
-                    System.out.println("Action:");
-                    action = scanner.nextLine();
-                    System.out.println("");
-                    if(action.equals("1")) {
-                        System.out.println("Name:");
-                        String name = scanner.nextLine();
-                        System.out.println("");
-                        System.out.println(admin.searchRegUserByName(name, lib) + "\n");
-                        
-                    }
-                    else if(action.equals("2")) {
-                        System.out.println("ID:");
-                        String id = scanner.nextLine();
-                        System.out.println("");
-                        System.out.println(admin.searchRegUserById(id, lib) + "\n");
-                    }
-                    else {
-                        break;
-                    }
-                }
-            }
-            else if(action.equals("4")) {
-                // TODO
-            }
-            else if(action.equals("9")) {
-                System.out.println(admin.getName() + "\n");
-            }
-            else {
-                break;
-            }
-        }
-        
-        scanner.close();
-    }
+    
 
 }
