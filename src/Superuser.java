@@ -41,7 +41,7 @@ public class Superuser extends User {
 
     public RegUser searchRegUserByName(String name, Library library) {
         for(RegUser r : library.getRegUsers()) {
-            if(r.getName().equals(name)) {
+            if(r.getName().toLowerCase().equals(name.toLowerCase())) {
                 return r;
             }
         }
