@@ -87,23 +87,24 @@ public class Main {
                     }
                 }
             }
-            else if(action.equals("3")) { //TODO
+            else if(action.equals("3")) {
                 while(true) {
                     System.out.println("SEARCH FOR REGISTERED USER\nActions\n1 - search by name\n2 - search by id\nx - exit");
                     System.out.println("Action:");
                     action = scanner.nextLine();
                     System.out.println("");
                     if(action.equals("1")) {
-                        System.out.println();
+                        System.out.println("Name:");
+                        String name = scanner.nextLine();
+                        System.out.println("");
+                        System.out.println(admin.searchRegUserByName(name, lib));
+                        
                     }
                     else if(action.equals("2")) {
-                        System.out.println();
-                    }
-                    else if(action.equals("3")) {
-                        System.out.println();
-                    }
-                    else if(action.equals("4")) {
-                        System.out.println();
+                        System.out.println("ID:");
+                        String id = scanner.nextLine();
+                        System.out.println("");
+                        System.out.println(admin.searchRegUserByName(id, lib));
                     }
                     else {
                         break;
