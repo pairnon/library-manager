@@ -71,16 +71,16 @@ public class Main {
                     action = scanner.nextLine();
                     System.out.println("");
                     if(action.equals("1")) {
-                        System.out.println(admin.getBooksByAuthorAsc(lib));
+                        System.out.println(admin.getBooksByAuthorAsc(lib) + "\n");
                     }
                     else if(action.equals("2")) {
-                        System.out.println(admin.getBooksByAuthorDesc(lib));
+                        System.out.println(admin.getBooksByAuthorDesc(lib) + "\n");
                     }
                     else if(action.equals("3")) {
-                        System.out.println(admin.getBooksByTitleAsc(lib));
+                        System.out.println(admin.getBooksByTitleAsc(lib) + "\n");
                     }
                     else if(action.equals("4")) {
-                        System.out.println(admin.getBooksByTitleDesc(lib));
+                        System.out.println(admin.getBooksByTitleDesc(lib) + "\n");
                     }
                     else {
                         break;
