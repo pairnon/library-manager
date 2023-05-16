@@ -9,8 +9,27 @@ public class Main {
 
         System.out.println("");
 
-        adminLogin(admin, lib);
+        Scanner scanner = new Scanner(System.in);
 
+        while(true) {
+            System.out.println("LOGIN\n1 - user login\n2 - admin login\nx - exit");
+            System.out.println("Action:");
+            String action = scanner.nextLine();
+            System.out.println("");
+            if(action.equals("1")) {
+                // TODO
+                break;
+            }
+            else if(action.equals("2")) {
+                adminLogin(admin, lib);
+                break;
+            }
+            else {
+                break;
+            }
+        }
+
+        scanner.close();
     }
 
     public static void adminLogin(Superuser admin, Library lib) {
@@ -34,6 +53,8 @@ public class Main {
         System.out.println("login success\n");
 
         adminMenu(admin, lib);
+
+        scanner.close();
     }
 
     public static void adminMenu(Superuser admin, Library lib) {
@@ -128,6 +149,7 @@ public class Main {
                 break;
             }
         }
+        
         scanner.close();
     }
 
