@@ -8,11 +8,18 @@ public class Main {
         Library lib = Instantiator.instantiateLibrary(admin);
 
         System.out.println("");
+
+        adminLogin(admin, lib);
+
+    }
+
+    public static void adminLogin(Superuser admin, Library lib) {
+
         Scanner scanner = new Scanner(System.in);
 
-        boolean loggedIn = admin.getLogInStatus();
+        boolean adminLoggedIn = admin.getLogInStatus();
 
-            while(!loggedIn) {
+            while(!adminLoggedIn) {
                 System.out.println("Admin Login");
                 System.out.println("default password is 'root'");
 
@@ -21,7 +28,7 @@ public class Main {
 
                 System.out.println("");
 
-                loggedIn = admin.authenticate(password);
+                adminLoggedIn = admin.authenticate(password);
             }
 
         System.out.println("login success\n");
