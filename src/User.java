@@ -98,6 +98,32 @@ public class User {
         return books;
     }
 
+    public ArrayList<Book> searchBooksByAuthor(Library library, String author) { // TODO case insensitivity
+        ArrayList<Book> books = library.getBooks();
+        ArrayList<Book> out = new ArrayList<Book>();
+
+        for(Book b : books) {
+            if(b.getAuthor().equals(author)) {
+                out.add(b);
+            }
+        }
+
+        return out;
+    }
+
+    public ArrayList<Book> searchBooksByTitle(Library library, String title) { // TODO case insensitivity
+        ArrayList<Book> books = library.getBooks();
+        ArrayList<Book> out = new ArrayList<Book>();
+
+        for(Book b : books) {
+            if(b.getTitle().equals(title)) {
+                out.add(b);
+            }
+        }
+
+        return out;
+    }
+
     public String toString() {
         String out = "";
         out += "Name: " + name + " | ID: " + id;
