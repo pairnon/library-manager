@@ -1,6 +1,26 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
+
+    public static void regUserLogin(Superuser admin, Library lib) {
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        boolean regUserSelected = false;
+
+        while(!regUserSelected) {
+            ArrayList<RegUser> libRegUsers = lib.getRegUsers();
+            
+            System.out.println("User Login");
+            System.out.println("ID:");
+            String id = scanner.nextLine();
+            System.out.println("");
+
+        }
+
+    }
+
     public static void adminLogin(Superuser admin, Library lib) {
 
         Scanner scanner = new Scanner(System.in);
