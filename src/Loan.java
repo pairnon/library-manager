@@ -7,12 +7,16 @@ public class Loan {
     private Date issueDate;
     private Date dueDate;
 
+    // amount of time between issueDate and dueDate in days
+    private final int loanLength = 5;
+
+    // specify the Loan's book and relevant dates
     public Loan(Book book) {
         this.book = book;
         this.issueDate = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
-        calendar.add(Calendar.DATE, 5);
+        calendar.add(Calendar.DATE, loanLength);
         this.dueDate = calendar.getTime();
     }
 
