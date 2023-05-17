@@ -22,6 +22,16 @@ public class RegUser extends User {
         return loans;
     }
 
+    public String getLoansAsStr() {
+        String out = "";
+
+        for(Loan l : loans) {
+            out += l + "\n";
+        }
+        
+        return out;
+    }
+
     public String toString() {
         String out = super.toString();
         String formattedLoans = "\n";
