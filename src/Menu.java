@@ -164,7 +164,7 @@ public class Menu {
 
             while(!adminLoggedIn) {
                 System.out.println("Admin Login");
-                System.out.println("default password is 'root'");
+                // System.out.println("default password is 'root'");
 
                 System.out.println("Password:");
                 String password = scanner.nextLine();
