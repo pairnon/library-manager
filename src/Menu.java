@@ -7,18 +7,44 @@ public class Menu {
         
         Scanner scanner = new Scanner(System.in);
         
-        boolean regUserSelected = false;
+        RegUser selectedRegUser = null;
 
-        while(!regUserSelected) {
+        while(selectedRegUser == null) {
             ArrayList<RegUser> libRegUsers = lib.getRegUsers();
-            
+
             System.out.println("User Login");
             System.out.println("ID:");
             String id = scanner.nextLine();
             System.out.println("");
-
+            System.out.println("Name:");
+            String name = scanner.nextLine();
+            System.out.println("");
+            if(checkUser(libRegUsers, id, name) == null) {
+                System.out.println("invalid ID and/or name\n");
+            }
+            else {
+                selectedRegUser = checkUser(libRegUsers, id, name);
+            }
+            
         }
 
+        System.out.println("login success\nlogged in as " + selectedRegUser.getName() + "\n");
+
+        // TODO : regUserMenu(admin, lib, selectedRegUser);
+
+        scanner.close();
+
+    }
+
+    public static RegUser checkUser(ArrayList<RegUser> libRegUsers, String id, String name) {
+        for(RegUser r : libRegUsers) {
+            boolean isValidRegUser = (String.valueOf(r.getId()).equals(id) && r.getName().equals(name)); // TODO : make case insensitive?
+            if(isValidRegUser) {
+                return r;
+            }
+        }
+        
+        return null;
     }
 
     public static void adminLogin(Superuser admin, Library lib) {
