@@ -98,12 +98,12 @@ public class User {
         return books;
     }
 
-    public ArrayList<Book> searchBooksByAuthor(Library library, String author) { // TODO case insensitivity
+    public ArrayList<Book> searchBooksByAuthor(Library library, String author) {
         ArrayList<Book> books = library.getBooks();
         ArrayList<Book> out = new ArrayList<Book>();
 
         for(Book b : books) {
-            if(b.getAuthor().equals(author)) {
+            if(b.getAuthor().toLowerCase().equals(author.toLowerCase())) {
                 out.add(b);
             }
         }
@@ -111,12 +111,12 @@ public class User {
         return out;
     }
 
-    public ArrayList<Book> searchBooksByTitle(Library library, String title) { // TODO case insensitivity
+    public ArrayList<Book> searchBooksByTitle(Library library, String title) {
         ArrayList<Book> books = library.getBooks();
         ArrayList<Book> out = new ArrayList<Book>();
 
         for(Book b : books) {
-            if(b.getTitle().equals(title)) {
+            if(b.getTitle().toLowerCase().equals(title.toLowerCase())) {
                 out.add(b);
             }
         }
@@ -124,11 +124,11 @@ public class User {
         return out;
     }
 
-    public Book searchBookExactMatch(Library library, String author, String title) { // TODO case insensitivity
+    public Book searchBookExactMatch(Library library, String author, String title) {
         ArrayList<Book> books = library.getBooks();
 
         for(Book b : books) {
-            if(b.getAuthor().equals(author) && b.getTitle().equals(title)) {
+            if(b.getAuthor().toLowerCase().equals(author.toLowerCase()) && b.getTitle().toLowerCase().equals(title.toLowerCase())) {
                 return(b);
             }
         }
