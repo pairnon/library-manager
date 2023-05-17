@@ -38,7 +38,7 @@ public class Menu {
 
     public static RegUser checkUser(ArrayList<RegUser> libRegUsers, String id, String name) {
         for(RegUser r : libRegUsers) {
-            boolean isValidRegUser = (String.valueOf(r.getId()).equals(id) && r.getName().equals(name)); // TODO : make case insensitive?
+            boolean isValidRegUser = (String.valueOf(r.getId()).equals(id) && r.getName().toLowerCase().equals(name.toLowerCase()));
             if(isValidRegUser) {
                 return r;
             }
