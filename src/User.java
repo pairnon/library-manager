@@ -98,6 +98,7 @@ public class User {
         return books;
     }
 
+    // returns all books that contain author search query
     public ArrayList<Book> searchBooksByAuthor(Library library, String author) {
         ArrayList<Book> books = library.getBooks();
         ArrayList<Book> out = new ArrayList<Book>();
@@ -111,6 +112,7 @@ public class User {
         return out;
     }
 
+    // returns all books that contain title search query
     public ArrayList<Book> searchBooksByTitle(Library library, String title) {
         ArrayList<Book> books = library.getBooks();
         ArrayList<Book> out = new ArrayList<Book>();
@@ -124,6 +126,7 @@ public class User {
         return out;
     }
 
+    // returns exact Book match by author and title if existent
     public Book searchBookExactMatch(Library library, String author, String title) {
         ArrayList<Book> books = library.getBooks();
 
