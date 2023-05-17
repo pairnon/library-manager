@@ -85,6 +85,9 @@ public class Menu {
                 break;
             }
         }
+
+        scanner.close();
+        
     }
 
     public static void adminLogin(Superuser admin, Library lib) {
@@ -193,9 +196,6 @@ public class Menu {
                         break;
                     }
                 }
-            }
-            else if(action.equals("4")) {
-                // TODO
             }
             else if(action.equals("9")) {
                 System.out.println(admin.getName() + "\n");
