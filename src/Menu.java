@@ -30,7 +30,7 @@ public class Menu {
 
         System.out.println("login success\nlogged in as " + selectedRegUser.getName() + "\n");
 
-        // TODO : regUserMenu(admin, lib, selectedRegUser);
+        regUserMenu(admin, lib, selectedRegUser);
 
         scanner.close();
 
@@ -45,6 +45,46 @@ public class Menu {
         }
         
         return null;
+    }
+
+    public static void regUserMenu(Superuser admin, Library lib, RegUser selectedRegUser) {
+
+        Scanner scanner = new Scanner(System.in);
+        while(true) {
+            System.out.println("LIBRARY MENU\nActions\n1 - sort books\n9 - whoami\nx - exit");
+            System.out.println("Action:");
+            String action = scanner.nextLine();
+            System.out.println("");
+            if(action.equals("1")) {
+                while(true) {
+                    System.out.println("SORT BOOKS\nActions\n1 - sort by author asc.\n2 - sort by author desc.\n3 - sort by title asc.\n4 - sort by title desc.\nx - exit");
+                    System.out.println("Action:");
+                    action = scanner.nextLine();
+                    System.out.println("");
+                    if(action.equals("1")) {
+                        System.out.println(admin.getBooksByAuthorAsc(lib) + "\n");
+                    }
+                    else if(action.equals("2")) {
+                        System.out.println(admin.getBooksByAuthorDesc(lib) + "\n");
+                    }
+                    else if(action.equals("3")) {
+                        System.out.println(admin.getBooksByTitleAsc(lib) + "\n");
+                    }
+                    else if(action.equals("4")) {
+                        System.out.println(admin.getBooksByTitleDesc(lib) + "\n");
+                    }
+                    else {
+                        break;
+                    }
+                }
+            }
+            else if(action.equals("9")) {
+                System.out.println(selectedRegUser.getName() + "\n");
+            }
+            else {
+                break;
+            }
+        }
     }
 
     public static void adminLogin(Superuser admin, Library lib) {
