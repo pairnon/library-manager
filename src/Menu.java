@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Menu {
 
+    // RegUser "authentication" by matching ID and name
     public static void regUserLogin(Superuser admin, Library lib) {
         
         Scanner scanner = new Scanner(System.in);
@@ -36,6 +37,7 @@ public class Menu {
 
     }
 
+    // regUserLogin helper method; check if such RegUser exists
     public static RegUser checkUser(ArrayList<RegUser> libRegUsers, String id, String name) {
         for(RegUser r : libRegUsers) {
             boolean isValidRegUser = (String.valueOf(r.getId()).equals(id) && r.getName().toLowerCase().equals(name.toLowerCase()));
@@ -47,6 +49,7 @@ public class Menu {
         return null;
     }
 
+    // prompts a logged in RegUser with available actions
     public static void regUserMenu(Superuser admin, Library lib, RegUser selectedRegUser) {
 
         Scanner scanner = new Scanner(System.in);
@@ -156,6 +159,7 @@ public class Menu {
         
     }
 
+    // Superuser authentication utilizing SHA-2 hashed passwords
     public static void adminLogin(Superuser admin, Library lib) {
 
         Scanner scanner = new Scanner(System.in);
@@ -181,6 +185,7 @@ public class Menu {
         scanner.close();
     }
 
+    // prompts a logged in SuperUser with available actions
     public static void adminMenu(Superuser admin, Library lib) {
 
         if(!admin.getLogInStatus()) {
