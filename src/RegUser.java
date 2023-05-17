@@ -18,6 +18,11 @@ public class RegUser extends User {
         loans.add(loan);
     }
 
+    public void addLoan(Book book) {
+        Loan l = new Loan(book);
+        loans.add(l);
+    }
+
     public ArrayList<Loan> getLoans() {
         return loans;
     }
