@@ -19,6 +19,7 @@ public class Superuser extends User {
         return loggedIn;
     }
 
+    // return a bool based on if after being hashed, input passwordAttempt matches password hash on record
     public boolean authenticate(String passwordAttempt) {
         
         PasswordHash hashedAttempt;
