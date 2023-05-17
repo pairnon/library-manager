@@ -264,7 +264,7 @@ public class Menu {
                 }
             }
             else if(action.equals("9")) {
-                System.out.println(admin.getName() + "\n");
+                System.out.println(lib.getAdminName() + "\n");
             }
             else {
                 break;
