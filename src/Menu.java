@@ -104,7 +104,7 @@ public class Menu {
                         System.out.println("Title:");
                         String title = scanner.nextLine();
                         System.out.println("");
-                        // TODO
+                        System.out.println(selectedRegUser.searchBookExactMatch(lib, author, title) + "\n");
                     }
                     else {
                         break;
