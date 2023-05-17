@@ -15,7 +15,7 @@ public class Main {
         // prompt for regUser or Superuser login
         while(true) {
             System.out.println("LOGIN\n1 - user login\n2 - admin login\nx - exit");
-            System.out.println("Action:");
+            System.out.print("$ ");
             String action = scanner.nextLine();
             System.out.println("");
             if(action.equals("1")) {

@@ -14,10 +14,10 @@ public class Menu {
             ArrayList<RegUser> libRegUsers = lib.getRegUsers();
 
             System.out.println("User Login");
-            System.out.println("ID:");
+            System.out.print("ID: ");
             String id = scanner.nextLine();
             System.out.println("");
-            System.out.println("Name:");
+            System.out.print("Name: ");
             String name = scanner.nextLine();
             System.out.println("");
             if(checkUser(libRegUsers, id, name) == null) {
@@ -55,13 +55,13 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         while(true) {
             System.out.println("LIBRARY MENU\nActions\n1 - browse library books\n2 - search for book\n3 - list my loans\n4 - borrow a book\n9 - whoami\nx - exit");
-            System.out.println("Action:");
+            System.out.print("$ ");
             String action = scanner.nextLine();
             System.out.println("");
             if(action.equals("1")) {
                 while(true) {
                     System.out.println("SORT BOOKS\nActions\n1 - sort by author asc.\n2 - sort by author desc.\n3 - sort by title asc.\n4 - sort by title desc.\nx - exit");
-                    System.out.println("Action:");
+                    System.out.print("$ ");
                     action = scanner.nextLine();
                     System.out.println("");
                     if(action.equals("1")) {
@@ -84,27 +84,27 @@ public class Menu {
             else if(action.equals("2")) {
                 while(true) {
                     System.out.println("SEARCH FOR BOOK\nActions\n1 - search by author\n2 - search by title\n3 - search by author and title\nx - exit");
-                    System.out.println("Action:");
+                    System.out.print("$ ");
                     action = scanner.nextLine();
                     System.out.println("");
                     if(action.equals("1")) {
-                        System.out.println("Author:");
+                        System.out.print("Author: ");
                         String author = scanner.nextLine();
                         System.out.println("");
                         System.out.println(selectedRegUser.searchBooksByAuthor(lib, author) + "\n");
                         
                     }
                     else if(action.equals("2")) {
-                        System.out.println("Title:");
+                        System.out.print("Title: ");
                         String title = scanner.nextLine();
                         System.out.println("");
                         System.out.println(selectedRegUser.searchBooksByTitle(lib, title) + "\n");
                     }
                     else if(action.equals("3")) {
-                        System.out.println("Author:");
+                        System.out.print("Author: ");
                         String author = scanner.nextLine();
                         System.out.println("");
-                        System.out.println("Title:");
+                        System.out.print("Title: ");
                         String title = scanner.nextLine();
                         System.out.println("");
                         if(selectedRegUser.searchBookExactMatch(lib, author, title) == null) {
@@ -124,10 +124,10 @@ public class Menu {
             }
             else if(action.equals("4")) {
                 System.out.println("BORROW A BOOK");
-                System.out.println("Author:");
+                System.out.print("Author: ");
                 String author = scanner.nextLine();
                 System.out.println("");
-                System.out.println("Title:");
+                System.out.print("Title: ");
                 String title = scanner.nextLine();
                 System.out.println("");
                 Book request = selectedRegUser.searchBookExactMatch(lib, author, title);
@@ -136,7 +136,7 @@ public class Menu {
                 }
                 else {
                     System.out.println(request);
-                    System.out.println("Borrow this book? [y/N]");
+                    System.out.print("Borrow this book? [y/N] ");
                     String confirm = scanner.nextLine();
                     if(confirm.toLowerCase().equals("y")) {
                         selectedRegUser.addLoan(request);
@@ -170,7 +170,7 @@ public class Menu {
                 System.out.println("Admin Login");
                 // System.out.println("default password is 'root'");
 
-                System.out.println("Password:");
+                System.out.print("Password: ");
                 String password = scanner.nextLine();
 
                 System.out.println("");
@@ -195,13 +195,13 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         while(true) {
             System.out.println("LIBRARY ADMINISTRATION\nActions\n1 - sort registered users\n2 - sort books\n3 - search for registered user\n9 - whoami\nx - exit");
-            System.out.println("Action:");
+            System.out.print("$ ");
             String action = scanner.nextLine();
             System.out.println("");
             if(action.equals("1")) {
                 while(true) {
                     System.out.println("SORT REGISTERED USERS\nActions\n1 - sort by name asc.\n2 - sort by name desc.\n3 - sort by id asc.\n4 - sort by id desc.\nx - exit");
-                    System.out.println("Action:");
+                    System.out.print("$ ");
                     action = scanner.nextLine();
                     System.out.println("");
                     if(action.equals("1")) {
@@ -224,7 +224,7 @@ public class Menu {
             else if(action.equals("2")) {
                 while(true) {
                     System.out.println("SORT BOOKS\nActions\n1 - sort by author asc.\n2 - sort by author desc.\n3 - sort by title asc.\n4 - sort by title desc.\nx - exit");
-                    System.out.println("Action:");
+                    System.out.print("$ ");
                     action = scanner.nextLine();
                     System.out.println("");
                     if(action.equals("1")) {
@@ -247,18 +247,18 @@ public class Menu {
             else if(action.equals("3")) {
                 while(true) {
                     System.out.println("SEARCH FOR REGISTERED USER\nActions\n1 - search by name\n2 - search by id\nx - exit");
-                    System.out.println("Action:");
+                    System.out.print("$ ");
                     action = scanner.nextLine();
                     System.out.println("");
                     if(action.equals("1")) {
-                        System.out.println("Name:");
+                        System.out.print("Name: ");
                         String name = scanner.nextLine();
                         System.out.println("");
                         System.out.println(admin.searchRegUserByName(name, lib) + "\n");
                         
                     }
                     else if(action.equals("2")) {
-                        System.out.println("ID:");
+                        System.out.print("ID: ");
                         String id = scanner.nextLine();
                         System.out.println("");
                         System.out.println(admin.searchRegUserById(id, lib) + "\n");
