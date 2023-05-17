@@ -51,7 +51,7 @@ public class Menu {
 
         Scanner scanner = new Scanner(System.in);
         while(true) {
-            System.out.println("LIBRARY MENU\nActions\n1 - sort library books\n2 - list my loans\n9 - whoami\nx - exit");
+            System.out.println("LIBRARY MENU\nActions\n1 - browse library books\n2 - search for book\n3 - list my loans\n9 - whoami\nx - exit");
             System.out.println("Action:");
             String action = scanner.nextLine();
             System.out.println("");
@@ -79,6 +79,39 @@ public class Menu {
                 }
             }
             else if(action.equals("2")) {
+                while(true) {
+                    System.out.println("SEARCH FOR BOOK\nActions\n1 - search by author\n2 - search by title\n3 - search by author and title\nx - exit");
+                    System.out.println("Action:");
+                    action = scanner.nextLine();
+                    System.out.println("");
+                    if(action.equals("1")) {
+                        System.out.println("Author:");
+                        String author = scanner.nextLine();
+                        System.out.println("");
+                        System.out.println(selectedRegUser.searchBooksByAuthor(lib, author) + "\n");
+                        
+                    }
+                    else if(action.equals("2")) {
+                        System.out.println("Title:");
+                        String title = scanner.nextLine();
+                        System.out.println("");
+                        System.out.println(selectedRegUser.searchBooksByTitle(lib, title) + "\n");
+                    }
+                    else if(action.equals("3")) {
+                        System.out.println("Author:");
+                        String author = scanner.nextLine();
+                        System.out.println("");
+                        System.out.println("Title:");
+                        String title = scanner.nextLine();
+                        System.out.println("");
+                        // TODO
+                    }
+                    else {
+                        break;
+                    }
+                }
+            }
+            else if(action.equals("3")) {
                 System.out.println(selectedRegUser.getLoansAsStr());
             }
             else if(action.equals("9")) {
