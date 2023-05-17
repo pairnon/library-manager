@@ -51,7 +51,7 @@ public class Menu {
 
         Scanner scanner = new Scanner(System.in);
         while(true) {
-            System.out.println("LIBRARY MENU\nActions\n1 - sort books\n9 - whoami\nx - exit");
+            System.out.println("LIBRARY MENU\nActions\n1 - sort library books\n2 - list my loans\n9 - whoami\nx - exit");
             System.out.println("Action:");
             String action = scanner.nextLine();
             System.out.println("");
@@ -77,6 +77,9 @@ public class Menu {
                         break;
                     }
                 }
+            }
+            else if(action.equals("2")) {
+                System.out.println(selectedRegUser.getLoansAsStr());
             }
             else if(action.equals("9")) {
                 System.out.println(selectedRegUser.getName() + "\n");
