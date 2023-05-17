@@ -10,7 +10,9 @@ public class Superuser extends User {
         super(name, id);
         try {
             this.password = new PasswordHash(SHA256.getDigest(password));
-        } catch (NoSuchAlgorithmException e) {
+        }
+        // in Java you must catch many things; like baseball, lah?
+        catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
     }
@@ -33,7 +35,9 @@ public class Superuser extends User {
 
             else return false;
 
-        } catch (NoSuchAlgorithmException e) {
+        }
+        // in Java you must catch many things; like baseball, lah?
+        catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
 
