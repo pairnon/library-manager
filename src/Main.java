@@ -17,7 +17,7 @@ public class Main {
             String action = scanner.nextLine();
             System.out.println("");
             if(action.equals("1")) {
-                // TODO
+                Menu.regUserLogin(admin, lib);
                 break;
             }
             else if(action.equals("2")) {
