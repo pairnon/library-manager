@@ -136,9 +136,8 @@ public class Menu {
                     System.out.println("Borrow this book? [y/N]");
                     String confirm = scanner.nextLine();
                     if(confirm.toLowerCase().equals("y")) {
-                        Loan l = new Loan(request);
-                        selectedRegUser.addLoan(l);
-                        System.out.println("\nadded loan\n" + l + "\n");
+                        selectedRegUser.addLoan(request);
+                        System.out.println("\nadded loan\n" + selectedRegUser.getLoans().get(selectedRegUser.getLoans().size() - 1) + "\n");
                     }
                     else {
                         System.out.println("cancelling\n");
