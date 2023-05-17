@@ -124,6 +124,19 @@ public class User {
         return out;
     }
 
+    public Book searchBookExactMatch(Library library, String author, String title) { // TODO case insensitivity
+        ArrayList<Book> books = library.getBooks();
+
+        for(Book b : books) {
+            if(b.getAuthor().equals(author) && b.getTitle().equals(title)) {
+                return(b);
+            }
+        }
+
+        return null;
+
+    }
+
     public String toString() {
         String out = "";
         out += "Name: " + name + " | ID: " + id;
