@@ -51,7 +51,7 @@ public class Menu {
 
         Scanner scanner = new Scanner(System.in);
         while(true) {
-            System.out.println("LIBRARY MENU\nActions\n1 - browse library books\n2 - search for book\n3 - list my loans\n9 - whoami\nx - exit");
+            System.out.println("LIBRARY MENU\nActions\n1 - browse library books\n2 - search for book\n3 - list my loans\n4 - borrow a book\n9 - whoami\nx - exit");
             System.out.println("Action:");
             String action = scanner.nextLine();
             System.out.println("");
@@ -104,7 +104,12 @@ public class Menu {
                         System.out.println("Title:");
                         String title = scanner.nextLine();
                         System.out.println("");
-                        System.out.println(selectedRegUser.searchBookExactMatch(lib, author, title) + "\n");
+                        if(selectedRegUser.searchBookExactMatch(lib, author, title) == null) {
+                            System.out.println("book not found\n");
+                        }
+                        else {
+                            System.out.println(selectedRegUser.searchBookExactMatch(lib, author, title));
+                        }
                     }
                     else {
                         break;
@@ -113,6 +118,32 @@ public class Menu {
             }
             else if(action.equals("3")) {
                 System.out.println(selectedRegUser.getLoansAsStr());
+            }
+            else if(action.equals("4")) {
+                System.out.println("BORROW A BOOK");
+                System.out.println("Author:");
+                String author = scanner.nextLine();
+                System.out.println("");
+                System.out.println("Title:");
+                String title = scanner.nextLine();
+                System.out.println("");
+                Book request = selectedRegUser.searchBookExactMatch(lib, author, title);
+                if(request == null) {
+                    System.out.println("book not found\n");
+                }
+                else {
+                    System.out.println(request);
+                    System.out.println("Borrow this book? [y/N]");
+                    String confirm = scanner.nextLine();
+                    if(confirm.toLowerCase().equals("y")) {
+                        Loan l = new Loan(request);
+                        selectedRegUser.addLoan(l);
+                        System.out.println("\nadded loan\n" + l + "\n");
+                    }
+                    else {
+                        System.out.println("cancelling\n");
+                    }
+                }
             }
             else if(action.equals("9")) {
                 System.out.println(selectedRegUser.getName() + "\n");
