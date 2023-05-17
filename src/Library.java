@@ -50,6 +50,7 @@ public class Library {
         regUsers.add(regUser);
     }
 
+    // returns index of first book found with a title
     public int findBookIndexByTitle(String title) {
         for(int i = 0; i < books.size(); i++) {
             if(books.get(i).getTitle().equals(title)) {
@@ -59,6 +60,7 @@ public class Library {
         return -1;
     }
 
+    // returns first Book found with a title
     public Book findBookByTitle(String title) {
         int index = findBookIndexByTitle(title);
         if(index >= 0) {
