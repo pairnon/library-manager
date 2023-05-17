@@ -103,7 +103,7 @@ public class User {
         ArrayList<Book> out = new ArrayList<Book>();
 
         for(Book b : books) {
-            if(b.getAuthor().toLowerCase().equals(author.toLowerCase())) {
+            if(b.getAuthor().toLowerCase().contains(author.toLowerCase())) {
                 out.add(b);
             }
         }
@@ -116,7 +116,7 @@ public class User {
         ArrayList<Book> out = new ArrayList<Book>();
 
         for(Book b : books) {
-            if(b.getTitle().toLowerCase().equals(title.toLowerCase())) {
+            if(b.getTitle().toLowerCase().contains(title.toLowerCase())) {
                 out.add(b);
             }
         }
